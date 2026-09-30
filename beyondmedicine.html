@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITP Bio Startup — BeyondMedicine</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#F4F6FB;}
+*{box-sizing:border-box;}
+
+body{margin:0;background:#F4F6FB;font-family:'IBM Plex Sans',sans-serif;}
+a{color:#2C4BFF;text-decoration:none;}
+h1,h2,.num{font-family:'Sora',sans-serif;}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(10,16,41,0.92);z-index:50;align-items:center;justify-content:center;padding:28px;}
+#lb-patient-cb:checked ~ .lightbox-patient{display:flex;}
+#lb-clinician-cb:checked ~ .lightbox-clinician{display:flex;}
+.lightbox img{max-width:100%;max-height:100%;border-radius:10px;display:block;}
+.lightbox-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;cursor:pointer;}
+@keyframes democross{0%{opacity:1;}45%{opacity:1;}55%{opacity:0;}95%{opacity:0;}100%{opacity:1;}}
+.demo-frame{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:22px;animation:democross 8s infinite;}
+.demo-frame img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;}
+.demo-frame.d2{animation-delay:-4s;}
+
+</style>
+</head>
+<body>
+
+
+<div style="max-width: 430px; width: 100%; min-height: 100vh; margin: 0 auto; box-sizing: border-box; background: #F4F6FB;">
+
+  <div style="position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden;">
+    <img src="assets/beyondmedicine-hero.png" alt="Clickless app shown on a phone, held by a patient touching their jaw" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% center;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,16,41,0.15) 0%, rgba(10,16,41,0.35) 42%, rgba(10,16,41,0.92) 88%, rgba(10,16,41,0.97) 100%);"></div>
+
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 24px 22px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: inline-flex; align-self: flex-start; padding: 5px 10px; border-radius: 6px; background: #2C4BFF; font-size: 11px; font-weight: 600; color: #ffffff;">DIGITAL THERAPEUTICS</div>
+      <h1 style="margin: 0; font-size: 30px; font-weight: 700; line-height: 1.12; color: #ffffff;">Beyond Medicine Co., Ltd.</h1>
+      <p style="margin: 0; font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.5; max-width: 320px;">Clickless — a prescription digital therapeutic (DTx/SaMD) for temporomandibular disorder (TMD) treatment.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+        <span style="font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 7px; color: #ffffff; background: #1E9A52;">MFDS Class II Approved</span>
+        <span style="font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 7px; color: #ffffff; background: #2C4BFF;">FDA CDRH Ack.</span>
+        <span style="font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 7px; color: #ffffff; border: 1px solid rgba(255,255,255,0.45);">CE-MDR Underway</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 30px 24px 56px; display: flex; flex-direction: column; gap: 32px;">
+    <input type="checkbox" id="lb-patient-cb" style="display:none;">
+    <input type="checkbox" id="lb-clinician-cb" style="display:none;">
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Why it matters</h2>
+      <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #3C4358;">240M people live with TMD worldwide. Conventional care is often symptom-focused, while stress, clenching, sleep and other habits continue between visits — contributing to relapse rates above 50%.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff; border: 1px solid #E2E6F0; border-radius: 20px; overflow: hidden;">
+        <div style="padding: 16px; border-right: 1px solid #E2E6F0; border-bottom: 1px solid #E2E6F0;">
+          <div class="num" style="font-size: 26px; font-weight: 700; color: #2C4BFF;">96%</div>
+          <div style="font-size: 11px; color: #5B6478; margin-top: 2px;">Therapeutic effectiveness</div>
+        </div>
+        <div style="padding: 16px; border-bottom: 1px solid #E2E6F0;">
+          <div class="num" style="font-size: 26px; font-weight: 700; color: #2C4BFF;">85%+</div>
+          <div style="font-size: 11px; color: #5B6478; margin-top: 2px;">42-day adherence</div>
+        </div>
+        <div style="padding: 16px; border-right: 1px solid #E2E6F0;">
+          <div class="num" style="font-size: 26px; font-weight: 700; color: #2C4BFF;">1,300</div>
+          <div style="font-size: 11px; color: #5B6478; margin-top: 2px;">Partner clinics &amp; hospitals</div>
+        </div>
+        <div style="padding: 16px;">
+          <div class="num" style="font-size: 26px; font-weight: 700; color: #2C4BFF;">240M</div>
+          <div style="font-size: 11px; color: #5B6478; margin-top: 2px;">People living with TMD</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">What Clickless does</h2>
+
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #E2E6F0;">
+          <div style="width: 3px; background: #2C4BFF; border-radius: 2px; flex-shrink: 0;"></div>
+          <div>
+            <div style="font-size: 14px; font-weight: 600; color: #0A1029;">Disease-specific DTx</div>
+            <div style="font-size: 13px; color: #5B6478; line-height: 1.5; margin-top: 2px;">Purpose-built for TMD's clinical and behavioral characteristics — not a generic exercise app.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #E2E6F0;">
+          <div style="width: 3px; background: #2C4BFF; border-radius: 2px; flex-shrink: 0;"></div>
+          <div>
+            <div style="font-size: 14px; font-weight: 600; color: #0A1029;">RCT-proven efficacy</div>
+            <div style="font-size: 13px; color: #5B6478; line-height: 1.5; margin-top: 2px;">102-patient multicenter, double-blind, sham-controlled trial. Peer-reviewed, SCI-indexed publication (JMIR, Oct 2025).</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px; padding: 12px 0;">
+          <div style="width: 3px; background: #2C4BFF; border-radius: 2px; flex-shrink: 0;"></div>
+          <div>
+            <div style="font-size: 14px; font-weight: 600; color: #0A1029;">De-risked regulatory path</div>
+            <div style="font-size: 13px; color: #5B6478; line-height: 1.5; margin-top: 2px;">MFDS Class II approved and commercially launched in Korea; FDA CDRH acknowledgement received; CE-MDR and Singapore HSA pathways underway.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #0A1029; border-radius: 20px; padding: 20px;">
+        <div style="font-size: 12px; font-weight: 600; color: #B7ADF2; margin-bottom: 12px;">Pivotal RCT vs. sham</div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-size: 13px; color: #C7CADB;">Pain (VAS)</span><span class="num" style="font-size: 15px; font-weight: 700; color: #ffffff;">3×</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-size: 13px; color: #C7CADB;">Mouth opening</span><span class="num" style="font-size: 15px; font-weight: 700; color: #ffffff;">4×</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-size: 13px; color: #C7CADB;">JFLS-20</span><span class="num" style="font-size: 15px; font-weight: 700; color: #ffffff;">4×</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-size: 13px; color: #C7CADB;">Oral habits (OBC)</span><span class="num" style="font-size: 15px; font-weight: 700; color: #ffffff;">5×</span></div>
+        </div>
+        <div style="font-size: 10px; color: #6E759A; margin-top: 12px;">Improvement vs. sham at 6 weeks</div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div>
+        <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Benefit</h2>
+        <div style="font-size: 12px; color: #8A90A3; margin-top: 2px;">Prescribe → Treat → Feedback</div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; gap: 14px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="num" style="width: 26px; height: 26px; border-radius: 50%; background: #2C4BFF; color: #ffffff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="width: 2px; flex: 1; background: #E2E6F0; margin: 4px 0;"></div>
+          </div>
+          <div style="padding-bottom: 18px;">
+            <div style="font-size: 14px; font-weight: 600; color: #0A1029;">Assess &amp; track</div>
+            <div style="font-size: 13px; color: #5B6478; line-height: 1.5;">TMD assessment, pain and habit tracking.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 14px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="num" style="width: 26px; height: 26px; border-radius: 50%; background: #2C4BFF; color: #ffffff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="width: 2px; flex: 1; background: #E2E6F0; margin: 4px 0;"></div>
+          </div>
+          <div style="padding-bottom: 18px;">
+            <div style="font-size: 14px; font-weight: 600; color: #0A1029;">5 min a day, for 6 weeks</div>
+            <div style="font-size: 13px; color: #5B6478; line-height: 1.5;">Guided jaw exercises, behavioral modification, TMD education, relaxation and psychoeducational content.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 14px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="num" style="width: 26px; height: 26px; border-radius: 50%; background: #2C4BFF; color: #ffffff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+          </div>
+          <div>
+            <div style="font-size: 14px; font-weight: 600; color: #0A1029;">Personalize</div>
+            <div style="font-size: 13px; color: #5B6478; line-height: 1.5;">Medical-algorithm feedback, continuously adjusted to the patient.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-radius: 14px; padding: 16px; background: #ffffff; border: 1px solid #E2E6F0; border-left: 3px solid #1E9A52;">
+      <div style="font-size: 15px; font-weight: 600; color: #0A1029;">Clinician dashboard</div>
+      <div style="font-size: 13px; color: #5B6478; line-height: 1.5; margin-top: 4px;">Prescribing clinicians remotely monitor patient adherence and treatment progress — built for institutional and multi-site deployment across hospitals and dental clinics.</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Business model &amp; market</h2>
+      <div style="display: flex; flex-direction: column;">
+        <div style="padding: 12px 0; border-bottom: 1px solid #E2E6F0;">
+          <div style="font-size: 14px; font-weight: 600; color: #0A1029;">Prescription B2B2C</div>
+          <div style="font-size: 13px; color: #5B6478; line-height: 1.5; margin-top: 2px;">Clinics prescribe a 6-week access program to patients — roughly $100 per-patient payment against $40 device supply cost.</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff; border: 1px solid #E2E6F0; border-radius: 20px; overflow: hidden;">
+        <div style="padding: 16px; border-right: 1px solid #E2E6F0;">
+          <div class="num" style="font-size: 22px; font-weight: 700; color: #2C4BFF;">$3.5B</div>
+          <div style="font-size: 11px; color: #5B6478; margin-top: 2px;">Global TMD market</div>
+        </div>
+        <div style="padding: 16px;">
+          <div class="num" style="font-size: 22px; font-weight: 700; color: #2C4BFF;">$130M</div>
+          <div style="font-size: 11px; color: #5B6478; margin-top: 2px;">Korea SOM</div>
+        </div>
+        <div style="padding: 16px; border-top: 1px solid #E2E6F0; border-right: 1px solid #E2E6F0; grid-column: 1 / span 2;">
+          <div class="num" style="font-size: 22px; font-weight: 700; color: #2C4BFF;">$1.51M</div>
+          <div style="font-size: 11px; color: #5B6478; margin-top: 2px;">Cumulative funding to date</div>
+        </div>
+      </div>
+      <div style="font-size: 10px; color: #8A90A3;">Market, business-model and financing figures reproduced from the BeyondMedicine IR deck (May 10, 2026).</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Differentiation</h2>
+      <div style="display: flex; flex-direction: column;">
+        <div style="padding: 12px 0; border-bottom: 1px solid #E2E6F0;">
+          <div style="font-size: 14px; font-weight: 600; color: #0A1029;">Multimodal treatment</div>
+          <div style="font-size: 13px; color: #5B6478; line-height: 1.5; margin-top: 2px;">Exercise, behavioral modification, education, psychological support, and continuous monitoring — in a single prescription, not a single-function app.</div>
+        </div>
+        <div style="padding: 12px 0;">
+          <div style="font-size: 14px; font-weight: 600; color: #0A1029;">Hardware-free scale</div>
+          <div style="font-size: 13px; color: #5B6478; line-height: 1.5; margin-top: 2px;">Runs on the patient app and clinician dashboard alone — no added hardware or capital equipment.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Product screens</h2>
+      <div style="display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap;">
+        <label for="lb-patient-cb" style="display: block; background: #ffffff; border: 1px solid #E2E6F0; border-radius: 14px; padding: 10px; cursor: pointer;">
+          <img src="assets/beyondmedicine-patient-app.png" alt="Clickless patient app dashboard showing weekly progress and habit tracking" style="height: 220px; width: auto; border-radius: 8px; display: block;">
+          <div style="font-size: 11px; font-weight: 600; color: #5B6478; margin-top: 6px; text-align: center;">Patient app</div>
+        </label>
+        <label for="lb-clinician-cb" style="display: block; background: #ffffff; border: 1px solid #E2E6F0; border-radius: 14px; padding: 10px; flex: 1; min-width: 160px; cursor: pointer;">
+          <img src="assets/beyondmedicine-clinician-dashboard.png" alt="Clickless clinical portal dashboard showing key metrics and pain trend" style="width: 100%; height: auto; border-radius: 8px; display: block;">
+          <div style="font-size: 11px; font-weight: 600; color: #5B6478; margin-top: 6px; text-align: center;">Clinician dashboard</div>
+        </label>
+      </div>
+    </div>
+
+    <div class="lightbox lightbox-patient">
+      <label for="lb-patient-cb" class="lightbox-close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
+      <img src="assets/beyondmedicine-patient-app.png" alt="Clickless patient app, enlarged">
+    </div>
+    <div class="lightbox lightbox-clinician">
+      <label for="lb-clinician-cb" class="lightbox-close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
+      <img src="assets/beyondmedicine-clinician-dashboard.png" alt="Clickless clinician dashboard, enlarged">
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Roadmap</h2>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; gap: 12px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 9px; height: 9px; border-radius: 50%; background: #2C4BFF;"></div>
+            <div style="width: 2px; flex: 1; background: #E2E6F0;"></div>
+          </div>
+          <div style="padding-bottom: 16px;">
+            <div style="font-size: 13px; font-weight: 600; color: #0A1029;">May 2022 — Founded</div>
+            <div style="font-size: 12px; color: #5B6478;">BeyondMedicine Co., Ltd. incorporated in Seoul.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 9px; height: 9px; border-radius: 50%; background: #2C4BFF;"></div>
+            <div style="width: 2px; flex: 1; background: #E2E6F0;"></div>
+          </div>
+          <div style="padding-bottom: 16px;">
+            <div style="font-size: 13px; font-weight: 600; color: #0A1029;">Dec 2025 — MFDS Class II approved</div>
+            <div style="font-size: 12px; color: #5B6478;">Commercial launch in Korea.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 9px; height: 9px; border-radius: 50%; background: #2C4BFF;"></div>
+            <div style="width: 2px; flex: 1; background: #E2E6F0;"></div>
+          </div>
+          <div style="padding-bottom: 16px;">
+            <div style="font-size: 13px; font-weight: 600; color: #0A1029;">Jul 2026 — FDA CDRH acknowledgement</div>
+            <div style="font-size: 12px; color: #5B6478;">U.S. Pre-Submission in progress.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 9px; height: 9px; border-radius: 50%; background: #2C4BFF;"></div>
+            <div style="width: 2px; flex: 1; background: #E2E6F0;"></div>
+          </div>
+          <div style="padding-bottom: 16px;">
+            <div style="font-size: 13px; font-weight: 600; color: #0A1029;">2027 — Singapore HSA registration targeted</div>
+            <div style="font-size: 12px; color: #5B6478;">EU CE-MDR conformity assessment in parallel.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 9px; height: 9px; border-radius: 50%; background: #2C4BFF;"></div>
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; color: #0A1029;">2H 2027 — Singapore commercial launch</div>
+            <div style="font-size: 12px; color: #5B6478;">Followed by ASEAN expansion (Malaysia, Thailand).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Recognition &amp; certifications</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <div style="border: 1px solid #E2E6F0; border-radius: 7px; padding: 8px 12px; font-size: 11px; font-weight: 600; color: #0A1029; background: #ffffff;">MFDS Innovative Medical Device (No. 82)</div>
+        <div style="border: 1px solid #E2E6F0; border-radius: 7px; padding: 8px 12px; font-size: 11px; font-weight: 600; color: #0A1029; background: #ffffff;">TIPS Selected*</div>
+        <div style="border: 1px solid #E2E6F0; border-radius: 7px; padding: 8px 12px; font-size: 11px; font-weight: 600; color: #0A1029; background: #ffffff;">Lotte Young Entrepreneur Award (2025)</div>
+        <div style="border: 1px solid #E2E6F0; border-radius: 7px; padding: 8px 12px; font-size: 11px; font-weight: 600; color: #0A1029; background: #ffffff;">Innovation Premier 1000 (2026)</div>
+      </div>
+      <div style="font-size: 10px; color: #8A90A3;">* TIPS — Korea's government-backed tech startup R&amp;D program.</div>
+      <div style="font-size: 11px; color: #8A90A3;">4 peer-reviewed publications (2 SCI-indexed)</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Leadership</h2>
+      <div style="font-size: 15px; font-weight: 600; color: #0A1029;">Daehyun Kim, CEO</div>
+      <div style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="font-size: 13px; color: #5B6478; line-height: 1.5;"><span style="color: #2C4BFF; font-weight: 700;">·</span> Board-certified periodontist (13 years in practice)</div>
+        <div style="font-size: 13px; color: #5B6478; line-height: 1.5;"><span style="color: #2C4BFF; font-weight: 700;">·</span> DDS/PhD and B.A. in Economics, Yonsei University</div>
+        <div style="font-size: 13px; color: #5B6478; line-height: 1.5;"><span style="color: #2C4BFF; font-weight: 700;">·</span> Adjunct professor, Hallym University Sacred Heart Hospital</div>
+        <div style="font-size: 13px; color: #5B6478; line-height: 1.5;"><span style="color: #2C4BFF; font-weight: 700;">·</span> Founded 5 startups (1 exit) before BeyondMedicine</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+        <a href="https://kr.linkedin.com/in/daehyun-kim-456406322" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid #2C4BFF; border-radius: 8px; color: #2C4BFF; font-size: 13px; font-weight: 600; width: fit-content;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.93v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg>
+          LinkedIn
+        </a>
+        <a href="#" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid #2C4BFF; border-radius: 8px; color: #2C4BFF; font-size: 13px; font-weight: 600; width: fit-content;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.1c-.24.68-1.2 1.25-1.97 1.42-.53.11-1.22.2-3.55-.76-2.98-1.23-4.9-4.25-5.05-4.45-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.08.92 2.23.07.15.12.33.02.53-.09.2-.15.32-.29.5-.15.17-.31.39-.45.52-.15.15-.3.3-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.68-.14.27.1 1.75.83 2.05.98.3.15.5.22.57.35.08.13.08.75-.16 1.43z"></path></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div style="font-size: 10px; color: #8A90A3;">[Add WhatsApp number]</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Clickless, Live</h2>
+      <div style="width: 100%; height: 260px; position: relative; border-radius: 14px; overflow: hidden; background: #0A1029;">
+        <div class="demo-frame d1"><img src="assets/beyondmedicine-patient-app.png" alt="Clickless patient app"></div>
+        <div class="demo-frame d2"><img src="assets/beyondmedicine-clinician-dashboard.png" alt="Clickless clinician dashboard"></div>
+        <div style="position: absolute; left: 14px; bottom: 12px; display: flex; gap: 6px;">
+          <div style="width: 5px; height: 5px; border-radius: 50%; background: #2C4BFF;"></div>
+        </div>
+      </div>
+      <div style="font-size: 11px; color: #8A90A3;">Patient app · Clinician dashboard — live product screens</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Website</h2>
+      <a href="https://beyondmedicine.kr" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid #2C4BFF; border-radius: 8px; color: #2C4BFF; font-size: 13px; font-weight: 600; width: fit-content;">
+        <img src="assets/beyondmedicine-logo-icon.png" alt="BeyondMedicine logo mark" style="width: 16px; height: 16px; object-fit: contain; display: block;">
+        beyondmedicine.kr
+      </a>
+    </div>
+
+    <div style="border-radius: 20px; padding: 22px; background: #0A1029; display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-size: 18px; font-weight: 600; color: #ffffff;">Interested in partnering?</div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 12px;">
+          <div style="font-size: 13px; font-weight: 600; color: #ffffff;">Distribution &amp; commercialization partners</div>
+          <div style="font-size: 12px; color: #9BA1BA; line-height: 1.5; margin-top: 2px;">Singapore/APAC regulatory support, market access, and in-country distribution.</div>
+        </div>
+        <div style="border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 12px;">
+          <div style="font-size: 13px; font-weight: 600; color: #ffffff;">Hospitals &amp; dental clinics</div>
+          <div style="font-size: 12px; color: #9BA1BA; line-height: 1.5; margin-top: 2px;">Clinical adoption and prescribing via the clinician dashboard.</div>
+        </div>
+      </div>
+
+      <a href="https://forms.gle/jq9qFXXrzbCi6VHE9" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; padding: 14px; background: #2C4BFF; border-radius: 10px; color: #ffffff; font-size: 14px; font-weight: 600;">Book a meeting</a>
+
+      <div style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.14);">
+        <div style="font-size: 13px; font-weight: 600; color: #ffffff;">Narae Lee</div>
+        <div style="font-size: 12px; color: #9BA1BA;">COO</div>
+        <a href="mailto:nr1322@beyondmedicine.kr" style="font-size: 12px; color: #2C4BFF;">nr1322@beyondmedicine.kr</a>
+        <div style="margin-top: 2px;"><a href="https://www.linkedin.com/in/narae2" target="_blank" rel="noopener" style="font-size: 12px; color: #2C4BFF;">LinkedIn</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
