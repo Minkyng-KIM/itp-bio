@@ -16,6 +16,8 @@ h1,h2,.num{font-family:'Sora',sans-serif;}
 #lb-1-cb:checked ~ .lightbox-1{display:flex;}
 #lb-2-cb:checked ~ .lightbox-2{display:flex;}
 #lb-3-cb:checked ~ .lightbox-3{display:flex;}
+#lb-4-cb:checked ~ .lightbox-4{display:flex;}
+#lb-5-cb:checked ~ .lightbox-5{display:flex;}
 .lightbox img{max-width:100%;max-height:100%;border-radius:10px;display:block;}
 .lightbox-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;cursor:pointer;}
 
@@ -40,6 +42,8 @@ h1,h2,.num{font-family:'Sora',sans-serif;}
     <input type="checkbox" id="lb-1-cb" style="display:none;">
     <input type="checkbox" id="lb-2-cb" style="display:none;">
     <input type="checkbox" id="lb-3-cb" style="display:none;">
+    <input type="checkbox" id="lb-4-cb" style="display:none;">
+    <input type="checkbox" id="lb-5-cb" style="display:none;">
 
     <div style="display: flex; flex-direction: column; gap: 14px;">
       <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Why it matters</h2>
@@ -127,6 +131,28 @@ h1,h2,.num{font-family:'Sora',sans-serif;}
     <div class="lightbox lightbox-3">
       <label for="lb-3-cb" class="lightbox-close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
       <img src="assets/cdthera-kit.png" alt="At-home saliva collection kit, enlarged">
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #0A1029;">Service brochure</h2>
+      <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5B6478;">PDX-AD at-home brain health monitoring platform &mdash; Singapore service introduction. Tap to enlarge.</p>
+      <label for="lb-4-cb" style="display: block; background: #ffffff; border: 1px solid #E2E6F0; border-radius: 14px; overflow: hidden; cursor: pointer;">
+        <img src="assets/cdthera-brochure-1.jpg" alt="CDThera PDX-AD Singapore brochure, page 1" style="width: 100%; display: block;">
+        <div style="padding: 10px 14px; font-size: 11px; font-weight: 600; color: #5B6478;">Service introduction &mdash; page 1</div>
+      </label>
+      <label for="lb-5-cb" style="display: block; background: #ffffff; border: 1px solid #E2E6F0; border-radius: 14px; overflow: hidden; cursor: pointer;">
+        <img src="assets/cdthera-brochure-2.jpg" alt="CDThera PDX-AD Singapore brochure, page 2" style="width: 100%; display: block;">
+        <div style="padding: 10px 14px; font-size: 11px; font-weight: 600; color: #5B6478;">Analysis &amp; partnerships &mdash; page 2</div>
+      </label>
+    </div>
+
+    <div class="lightbox lightbox-4">
+      <label for="lb-4-cb" class="lightbox-close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
+      <img src="assets/cdthera-brochure-1.jpg" alt="CDThera PDX-AD Singapore brochure, page 1, enlarged">
+    </div>
+    <div class="lightbox lightbox-5">
+      <label for="lb-5-cb" class="lightbox-close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
+      <img src="assets/cdthera-brochure-2.jpg" alt="CDThera PDX-AD Singapore brochure, page 2, enlarged">
     </div>
 
     <div style="display: flex; flex-direction: column; gap: 16px;">
